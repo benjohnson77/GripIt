@@ -6,7 +6,7 @@ I was given a java project that demonstrated searching a file for a word and ret
 
 The java code had a tokenizer class, if this was not a educational example I might have used something like solr to search multiple files and return words around them, but instead I used a regular experssion. I also didn't quickly find a gem that I know would behave enough like this sample tokenizer class so i didn't look. 
 
-The java project contained existing test (love it when that happens). I worked through each test and made sure my regualar experssion match the exact responses. I used the ruby scan method to trigger the regex. I did not use and loops or chuck the file in anyway.  
+The java project contained existing test (love it when that happens). I worked through each test and made sure my regualar experssion match the exact responses. I used the ruby scan method to trigger the regex. I did not use any loops or chuck the file in anyway.  
 
 I am no bueno at regualar expressions so it took some time to get the expression to match the expected results in the test.
 
