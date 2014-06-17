@@ -1,11 +1,11 @@
 require 'spec_helper.rb'
 
-describe TextSearcher do
+describe GripIt do
 
 	describe "simple examples with short file" do 
 
 		before(:each) do
-			@text_search=TextSearcher.new("files/short_excerpt.txt")
+			@text_search=GripIt.new("files/short_excerpt.txt","word")
 		end	
 
 		it "should only return 1 hit" do 
@@ -42,7 +42,7 @@ describe TextSearcher do
 	describe "more complex with larger file" do
 
 		before(:each) do
-			@text_search=TextSearcher.new("files/long_excerpt.txt")
+			@text_search=GripIt.new("files/long_excerpt.txt","word")
 		end	
 
 		it "should return a sting with apostrophe" do
@@ -73,76 +73,5 @@ describe TextSearcher do
 
 end		
 
-
-# 	/** Searcher can execute multiple searches after initialization. */
-# 	@Test
-# 	public void testMultipleSearches() throws Exception {
-# 		File file = new File("files/short_excerpt.txt");
-# 		TextSearcher searcher = new TextSearcher(file);
-# 		String[] expected;
-# 		String[] results;
-		
-# 		// Just runs the same queries as other tests, but on a single TextSearcher instance:
-# 		expected = new String[] {
-# 				"on the Origin of Species.  Until recently the great",
-# 				"of naturalists believed that species were immutable productions, and",
-# 				"hand, have believed that species undergo modification, and that" };
-# 		results = searcher.search("species",4);
-# 		assertArraysEqual(expected,results);
-		
-# 		expected = new String[] { "I will here give a brief sketch" };
-# 		results = searcher.search("here",4);
-# 		assertArraysEqual(expected,results);
-		
-# 		expected = new String[] { "and that the existing forms of life",
-# 									"generation of pre existing forms." };
-# 		results = searcher.search("existing",3);
-# 		assertArraysEqual(expected,results);
-# 	}
-	
-# 	/** Overlapping hits should just come back as separate hits. */
-# 	@Test
-# 	public void testOverlappingHits() throws Exception {
-# 		String[] expected = {
-# 				"of naturalists believed that species were immutable",
-# 				"hand, have believed that species undergo modification",
-# 				"undergo modification, and that the existing forms",
-
-# 		};
-# 		File file = new File("files/short_excerpt.txt");
-# 		TextSearcher searcher = new TextSearcher(file);
-# 		String[] results = searcher.search("that", 3);
-# 		assertArraysEqual(expected, results);
-# 	}
-
-# 	/** If no hits, get back an empty array. */
-# 	@Test
-# 	public void testNoHits() throws Exception {
-# 		File file = new File("files/long_excerpt.txt");
-# 		TextSearcher searcher = new TextSearcher(file);
-# 		String[] results = searcher.search("slejrlskejrlkajlsklejrlksjekl", 3);
-# 		Assert.assertNotNull(results);
-# 		Assert.assertEquals(0, results.length);
-# 	}
-	
-# 	/** Verify the tokenizer. This should always pass. */
-# 	@Test
-# 	public void testTokenizer() throws Exception {
-# 		String input = "123, 789: def";
-# 		// In this test we define words to be strings of digits
-# 		String[] expected = { "123",", ","789", ": def" };
-# 		TextTokenizer lexer = new TextTokenizer(input,"[0-9]+");
-# 		List<String> tokens = new ArrayList<String>();
-# 		while (lexer.hasNext()) { 
-# 			tokens.add(lexer.next());
-# 		}
-# 		String[] results = (String[])tokens.toArray(new String[tokens.size()]);
-# 		assertArraysEqual(expected,results);
-		
-# 		Assert.assertTrue(lexer.isWord("1029384"));
-# 		Assert.assertFalse(lexer.isWord("1029388 "));
-# 		Assert.assertFalse(lexer.isWord("123,456"));
-# 	}
-# }
 
 
