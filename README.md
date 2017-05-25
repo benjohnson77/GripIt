@@ -26,3 +26,7 @@ rspec spec
 There is a URL method roughed in that I want to finish aka right tests for.
 I want to add some other similar common regex patterns and add them as additional types.
 Maybe this is worth making a gem too, not sure.
+
+![regex comics](https://imgs.xkcd.com/comics/regular_expressions.png)
+![regex comics](https://imgs.xkcd.com/comics/perl_problems.png)
+![regex comics](https://imgs.xkcd.com/comics/regex_golf.png)
